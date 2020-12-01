@@ -3,7 +3,7 @@
     $secao = "Lista";
     $titulo = "Lista";
     Controle_Interface::exibir_cabecalho($secao,$titulo);
-    controla_aceso();
+    Controle_Auth::controla_aceso();
 ?>
   
     <ul>
