@@ -1,12 +1,12 @@
 <?php    
-    
+    require_once __DIR__ . '\include\autoload.php';
     $erro = false;
     $usuario = "";
     
     if( isset($_POST['a']) && ($_POST['a'] === 'entrar' ) ){
         $usuario = $_POST['u'];
         $senha = $_POST['s'];
-        $erro =  ($usuario != 'andre' ) || ($senha != '123');
+        $erro =  !Controle_Auth::login($usuario,$senha);
         if(!$erro){
             require_once __DIR__ . '/include/autoload.php';
             $_SESSION['usuario'] = 'andre';
