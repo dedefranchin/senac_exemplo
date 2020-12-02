@@ -11,14 +11,7 @@ class Controle_Auth{
     }
 
     public static function login(string $nome_usuario, string $senha):bool{
-        $db_database = 'andre_progweb_login';
-        $db_hostname = 'localhost';
-        $db_username = "andre";
-        $db_senha = "bebaleite";
-        
-        $dsn = "mysql:dbname=$db_database;hostname=$db_hostname";
-        
-        
+        global $dsn , $db_username, $db_senha;
         try{
             $pdo = new PDO($dsn, $db_username, $db_senha);
             $sql = "SELECT * FROM usuario WHERE nome_usuario = '$nome_usuario' AND senha = '$senha'";
