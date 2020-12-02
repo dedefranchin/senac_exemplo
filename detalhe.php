@@ -25,7 +25,7 @@
     }
     $produtos = $resultado->fetchObject();
     $template->NOME = $produtos->nome;
-    $template->PRECO = $produtos->preco_centavos/100;
+    $template->PRECO =  number_format($produtos->preco_centavos/100, 2, ',', '.');
     $template->DESCRICAO = $produtos->descricao;
     $principal = $template->parse();
     Controle_Interface::exibir_pagina('Detalhes','Lista', $principal);
