@@ -9,7 +9,6 @@
         $erro =  !Controle_Auth::login($usuario,$senha);
         if(!$erro){
             require_once __DIR__ . '/include/autoload.php';
-            $_SESSION['usuario'] = 'andre';
             header('Location:index.php?');
             exit(0);
         }

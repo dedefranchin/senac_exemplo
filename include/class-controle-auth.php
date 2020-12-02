@@ -13,10 +13,11 @@ class Controle_Auth{
     public static function login(string $nome_usuario, string $senha):bool{
         $db_database = 'andre_progweb_login';
         $db_hostname = 'localhost';
-        
-        $dsn = "mysql:dbname=$db_database;hostname=$db_hostname";
         $db_username = "andre";
         $db_senha = "bebaleite";
+        
+        $dsn = "mysql:dbname=$db_database;hostname=$db_hostname";
+        
         
         try{
             $pdo = new PDO($dsn, $db_username, $db_senha);
@@ -26,6 +27,8 @@ class Controle_Auth{
                 return FALSE; //erro mysql
             }
             $usuario = $resultado->fetchObject() ;
+            unset($usuario->senha);
+            $_SESSION['usuario'] = $usuario;
 
             return $usuario !== FALSE;
         }catch(PDOException $e) {
