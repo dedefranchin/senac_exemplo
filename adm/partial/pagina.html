@@ -1,0 +1,31 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{TITULO}</title>
+    
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    
+    
+</head>
+<body>
+    <header>
+        <span>Bem vindo, {NOME_USUARIO_LOGADO}</span>
+        <div class="menu-principal">
+            <a href="index.php"  class="{SELECIONADO_HOME}"  >Home</a>
+            <a href="lista.php"  class="{SELECIONADO_LISTA}">Lista</a>
+        </div>
+        <div class="painel-usuario">
+            <a href="logout.php">Sair</a>
+        </div>
+       
+    </header>
+    <article>
+        <h1>{TITULO}</h1>
+        {PRINCIPAL}
+    </article>
+</body>
+</html>
